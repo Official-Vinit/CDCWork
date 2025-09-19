@@ -45,11 +45,12 @@ const userSchema = new mongoose.Schema({
     education: {
         tenth: {
             percentage: { type: Number },
-            board: { type: String, enum: ['State', 'CBSE', 'ICSC', 'NEB', 'others'] },
+            board: { type: String, enum: ['State', 'CBSE', 'ICSE', 'NEB', 'others'] },
             passingYear: { type: Number }
         },
-        twelth: {
+        twelfth: {
             percentage: { type: Number },
+            board: { type: String, enum: ['State', 'CBSE', 'ICSE', 'NEB', 'others'] },
             passingYear: { type: Number }
         },
         diploma: {

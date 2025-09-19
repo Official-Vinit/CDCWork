@@ -123,7 +123,7 @@ const AcademicDetails = () => {
                         <input name="percentage" type="number" placeholder="Percentage" value={formData.education.tenth.percentage || ''} onChange={(e) => handleNestedChange(e, 'tenth')} />
                         <select name="board" value={formData.education.tenth.board || ''} onChange={(e) => handleNestedChange(e, 'tenth')}>
                             <option value="">Select Board</option>
-                            {['State', 'CBSE', 'ICSC', 'NEB', 'others'].map(b => <option key={b} value={b}>{b}</option>)}
+                            {['State', 'CBSE', 'ICSE', 'NEB', 'others'].map(b => <option key={b} value={b}>{b}</option>)}
                         </select>
                         <input name="passingYear" type="number" placeholder="Passing Year" value={formData.education.tenth.passingYear || ''} onChange={(e) => handleNestedChange(e, 'tenth')} />
                     </fieldset>
@@ -131,6 +131,10 @@ const AcademicDetails = () => {
                     <fieldset className="full-width">
                          <legend>12th Grade</legend>
                          <input name="percentage" type="number" placeholder="Percentage" value={formData.education.twelfth.percentage || ''} onChange={(e) => handleNestedChange(e, 'twelfth')} />
+                         <select name="board" value={formData.education.twelfth.board || ''} onChange={(e) => handleNestedChange(e, 'twelfth')}>
+                            <option value="">Select Board</option>
+                            {['State', 'CBSE', 'ICSE', 'NEB', 'others'].map(b => <option key={b} value={b}>{b}</option>)}
+                        </select>
                          <input name="passingYear" type="number" placeholder="Passing Year" value={formData.education.twelfth.passingYear || ''} onChange={(e) => handleNestedChange(e, 'twelfth')} />
                     </fieldset>
                     
@@ -154,7 +158,8 @@ const AcademicDetails = () => {
                     <div><strong>Passout Year:</strong><p>{initialData.passoutYear || 'N/A'}</p></div>
                     <div><strong>UG CGPA:</strong><p>{initialData.ugCgpa || 'N/A'}</p></div>
                     <div className="full-width"><strong>10th Grade:</strong><p>{initialData.education?.tenth?.percentage ? `${initialData.education.tenth.percentage}% (${initialData.education.tenth.board})` : 'N/A'}</p></div>
-                    <div className="full-width"><strong>12th Grade:</strong><p>{initialData.education?.twelfth?.percentage ? `${initialData.education.twelfth.percentage}%` : 'N/A'}</p></div>
+                    <div className="full-width"><strong>12th Grade:</strong><p>{initialData.education?.twelfth?.percentage ? `${initialData.education.twelfth.percentage}% (${initialData.education.twelfth.board})` : 'N/A'}</p></div>
+                    <div className="full-width"><strong>Diploma:</strong><p>{initialData.education?.diploma?.percentage ? `${initialData.education.diploma.percentage}%` : 'N/A'}</p></div>
                  </div>
             )}
         </div>

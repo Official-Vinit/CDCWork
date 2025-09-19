@@ -2,6 +2,16 @@ const Job = require('../models/job.model');
 const User = require('../models/user.js');
 
 // @desc    Admin creates a new job posting
+// @desc    Admin gets all job postings
+exports.getAllJobs = async (req, res) => {
+    try {
+        const jobs = await Job.find({}).sort({ createdAt: -1 });
+        res.status(200).json(jobs);
+    } catch (error) {
+        res.status(500).json({ message: 'Server Error' });
+    }
+};
+
 exports.createJob = async (req, res) => {
     try {
         const job = new Job({

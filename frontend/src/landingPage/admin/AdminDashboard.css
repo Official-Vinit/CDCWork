@@ -37,6 +37,14 @@
     background-color: #f0f2f5;
 }
 
+.students-table .clickable-cell {
+    cursor: pointer;
+}
+
+.students-table .clickable-cell:hover {
+    text-decoration: underline;
+}
+
 .error-message {
     color: #c53030;
     background-color: #fff5f5;
@@ -89,4 +97,92 @@
 .search-bar:focus {
     border-color: #007aff;
     box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* Modal styles */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 720px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-body {
+    padding: 16px 20px;
+}
+
+.detail-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.detail-item.full { 
+    grid-template-columns: 1fr; 
+}
+
+.detail-item strong { 
+    color: #6b7280; 
+}
+
+.detail-item span, .detail-item a { 
+    color: #111827; 
+}
+
+.student-photo {
+    margin-top: 8px;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.profile-links a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 6px;
+    padding: 6px 10px;
+    background: #eef2ff;
+    color: #3730a3;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 12px 20px 20px 20px;
 }
