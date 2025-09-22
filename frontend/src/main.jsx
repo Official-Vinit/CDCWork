@@ -14,7 +14,7 @@ import ManagePosts from './landingPage/admin/ManagePosts';
 import AvailableJobs from './landingPage/dashboard/availableJob';
 import ManageApplications from './landingPage/admin/ManageApplications';
 import CreateJob from './landingPage/admin/CreateJob';
-
+import ManageJobs from './landingPage/admin/ManageJobs'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -30,9 +30,9 @@ createRoot(document.getElementById('root')).render(
           <Route path="/student/availableJob" element={<AvailableJobs />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/Post"element={<ManagePosts/>}/>
-          <Route path="/admin/applications" element={<ManageApplications />} />
-          <Route path="/admin/createJob" element={<CreateJob />} />
-
+          {/* <Route path="/admin/applications" element={<ManageApplications />} />
+          <Route path="/admin/createJob" element={<CreateJob />} /> */}
+<Route path="/admin/JobsPosts"element={<ManageJobs/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

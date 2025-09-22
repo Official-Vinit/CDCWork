@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
         match: [/^[a-zA-Z0-9.]+@kpriet\.ac\.in$/, 'Please use your official KPRIET email.']
     },
     password: { type: String, required: true, select: false },
-    role: { type: String, enum: ['student', 'admin'], default: 'student' },
+    role: { type: String, enum: ['user', 'admin'], default: 'user' },
     isProfileComplete: { type: Boolean, default: false },
     universityRegNumber: {
         type: String,

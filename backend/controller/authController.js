@@ -35,10 +35,9 @@ exports.register = async (req, res) => {
             // All other fields will use defaults or be empty as per the schema
         });
 
-
-
+        // Changed from '1h' to '30d'
         const token = jwt.sign({ id: user._id, role: user.role }, JWT_USER_SECRET, {
-            expiresIn: '1h'
+            expiresIn: '30d'
         });
 
 
@@ -83,11 +82,11 @@ exports.login = async (req, res) => {
         return res.status(401).json({ message: "Invalid credentials." });
       }
 
-      // Create admin token
+      // Create admin token (already 30 days)
       const adminToken = jwt.sign(
         { id: admin._id, role: admin.role },
         JWT_ADMIN_SECRET,
-        { expiresIn: "1h" }
+        { expiresIn: "30d" }
       );
 
       return res.status(200).json({
@@ -107,9 +106,9 @@ exports.login = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials." });
     }
 
-    // 5. Create user token
+    // 5. Create user token - Changed from '1h' to '30d'
     const token = jwt.sign({ id: user._id, role: user.role }, JWT_USER_SECRET, {
-      expiresIn: "1h",
+      expiresIn: "30d",
     });
 
     res.status(200).json({

@@ -79,7 +79,7 @@ const Sidebar = () => {
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/admin/createJob">
+                                    <NavLink to="/admin/JobsPosts">
                                     <FaPaperPlane/><span> Create Job</span>
                                     </NavLink>
                                 </li>

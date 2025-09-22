@@ -10,7 +10,7 @@ const authRoutes = require('./routes/authRoute');
 const userRoutes = require('./routes/userRoutes');
 const applicationRoutes = require('./routes/application.routes');
 const postRoutes = require('./routes/postRoutes');
-
+const jobRoutes=require('./routes/jobRoutes');
 const app = express();
 
 // --- Middlewares ---
@@ -35,7 +35,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/applications', applicationRoutes);
 app.use('/api/posts', postRoutes);
-
+app.use('/api/jobs',jobRoutes);
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
