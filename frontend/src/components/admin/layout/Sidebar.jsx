@@ -27,7 +27,7 @@ export function Sidebar() {
   const location = useLocation();
 
   return (
-    <div className="hidden md:flex md:flex-shrink-0 bg-white dark:bg-transparent">
+    <div className="flex md:flex-shrink-0 bg-white dark:bg-transparent">
       <div className="flex flex-col w-64 border-r border-gray-200 bg-white text-gray-900 dark:border-white/10 dark:bg-[#0f172a] dark:text-zinc-100">
         <div className="flex items-center h-16 px-4 border-b border-gray-200 dark:border-white/10">
           <h1 className="text-xl font-bold text-primary dark:text-zinc-100">Placement Cell</h1>
